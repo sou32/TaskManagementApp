@@ -2,5 +2,6 @@
 while (true)
 {
     Home home = new Home();
-    home.StartMessage();
+    home.ShowStartMessage();
+    
 }

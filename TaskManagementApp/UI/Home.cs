@@ -1,7 +1,7 @@
 namespace TaskManagementApp.UI;
 public class Home
 {
-    public void StartMessage()
+    public void ShowStartMessage()
     {
         Console.WriteLine("タスク管理ホーム画面");
         Console.WriteLine("実施したいコマンドを選択してください:");
