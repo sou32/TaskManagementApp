@@ -1,1 +1,6 @@
-﻿Console.WriteLine("Hello World!");
+﻿using TaskManagementApp.UI;
+while (true)
+{
+    Home home = new Home();
+    home.StartMessage();
+}
