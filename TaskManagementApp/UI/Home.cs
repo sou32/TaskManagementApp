@@ -3,7 +3,6 @@ namespace TaskManagementApp.UI;
 /// <summary>
 /// ホーム画面のUI
 /// </summary>
-
 public class Home
 {
     /// <summary>
@@ -59,6 +58,7 @@ public class Home
             Console.WriteLine("入力が不正です。再度入力してください。");
         }
     }
+    
     /// <summary>
     /// コマンドが有効かどうかを判定する
     /// </summary>
