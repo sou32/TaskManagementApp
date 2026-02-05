@@ -1,17 +1,35 @@
 namespace TaskManagementApp.UI;
 
+/// <summary>
+/// ホーム画面のUI
+/// </summary>
+
 public class Home
 {
+    /// <summary>
+    /// コマンドの最小値
+    /// </summary>
     private const int MinCommand = 1;
+    
+    /// <summary>
+    /// コマンドの最大値
+    /// </summary>
     private const int MaxCommand = 5;
     
+    /// <summary>
+    /// タスクアプリのホーム画面の表示とコマンドの入力をする
+    /// </summary>
+    /// <returns></returns>
     public int ShowStartMessage()
     {
-        DisplayMenu();
-        return ReadValidCommand();
+        ShowHomeMessage();
+        return ReadCommand();
     }
-
-    private void DisplayMenu()
+    
+    /// <summary>
+    /// ホーム画面のメッセージを表示
+    /// </summary>
+    private void ShowHomeMessage()
     {
         Console.WriteLine("タスク管理ホーム画面");
         Console.WriteLine("実施したいコマンドの数字を選択してください:");
@@ -21,26 +39,42 @@ public class Home
         Console.WriteLine("4. ステータス変更");
         Console.WriteLine("5. 終了");
     }
-
-    private int ReadValidCommand()
+    
+    /// <summary>
+    /// コマンドを読み取る
+    /// </summary>
+    /// <returns>入力されたコマンド</returns>
+    private int ReadCommand()
     {
         while (true)
         {
             Console.Write("実施したいコマンドを選択してください:");
-            string? input = Console.ReadLine();
+            string input = Console.ReadLine() ?? string.Empty;
 
-            if (TryParseCommand(input, out int command))
+            if (ValidCommand(input))
             {
-                return command;
+                return int.Parse(input);
             }
 
             Console.WriteLine("入力が不正です。再度入力してください。");
         }
     }
+    /// <summary>
+    /// コマンドが有効かどうかを判定する
+    /// </summary>
+    /// <param name="input">入力されたコマンド</param>
+    /// <returns>有効か無効か</returns>
+    private bool ValidCommand(string input)
+    { 
+        if (input != string.Empty && int.TryParse(input, out int result))
+        {
+           if (MinCommand <= result && result <= MaxCommand)
+           {
+               return true;
+           }
+        }
 
-    private static bool TryParseCommand(string? input, out int command)
-    {
-        return int.TryParse(input, out command) 
-               && command is >= MinCommand and <= MaxCommand;
+        return false;
     }
+
 }
