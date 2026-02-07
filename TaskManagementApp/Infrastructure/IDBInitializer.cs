@@ -1,7 +1,9 @@
+using Microsoft.Data.Sqlite;
+using TaskManagementApp.Domain.Entity;
+
 namespace TaskManagementApp.Infrastructure;
 
-public interface IDBManager
+public interface IDBInitializer
 {
     void Initialize();
-    void Close();
 }

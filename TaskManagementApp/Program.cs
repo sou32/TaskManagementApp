@@ -1,9 +1,9 @@
 ﻿using TaskManagementApp.UI;
 using TaskManagementApp.Infrastructure;
 
-//DB作成＆接続
-IDBManager dbManager = new DbManager();
-dbManager.Initialize();
+// DB作成＆接続
+IDBInitializer dbInitializer = new DBInitializer();
+dbInitializer.Initialize();
 
 while (true)
 {
@@ -22,5 +22,3 @@ while (true)
         break;
     }
 }
-
-dbManager.Close();
