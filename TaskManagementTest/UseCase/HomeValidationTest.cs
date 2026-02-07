@@ -1,7 +1,7 @@
 ﻿using TaskManagementApp.UseCase;
 namespace TaskManagementTest;
 
-public class UnitTest1
+public class HomeValidationTest
 {
     [Theory]
     [InlineData("0", false)]
