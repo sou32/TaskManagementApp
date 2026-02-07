@@ -1,7 +1,7 @@
 ﻿using TaskManagementApp.UI;
 while (true)
 {
-    Home home = new Home();
+    IHome home = new Home();
     TaskView taskView = new TaskView();
     
     int command = home.ShowStartMessage();

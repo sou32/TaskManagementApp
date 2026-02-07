@@ -1,20 +1,12 @@
+using TaskManagementApp.UseCase;
 namespace TaskManagementApp.UI;
 
 /// <summary>
 /// ホーム画面のUI
 /// </summary>
-public class Home
+public class Home: IHome
 {
-    /// <summary>
-    /// コマンドの最小値
-    /// </summary>
-    private const int MinCommand = 1;
-    
-    /// <summary>
-    /// コマンドの最大値
-    /// </summary>
-    private const int MaxCommand = 5;
-    
+    private readonly IHomeValidation _homeValidation = new HomeValidation();
     /// <summary>
     /// タスクアプリのホーム画面の表示とコマンドの入力をする
     /// </summary>
@@ -50,7 +42,7 @@ public class Home
             Console.Write("実施したいコマンドを選択してください:");
             string input = Console.ReadLine() ?? string.Empty;
 
-            if (ValidCommand(input))
+            if (_homeValidation.Validation(input))
             {
                 return int.Parse(input);
             }
@@ -58,23 +50,4 @@ public class Home
             Console.WriteLine("入力が不正です。再度入力してください。");
         }
     }
-    
-    /// <summary>
-    /// コマンドが有効かどうかを判定する
-    /// </summary>
-    /// <param name="input">入力されたコマンド</param>
-    /// <returns>有効か無効か</returns>
-    private bool ValidCommand(string input)
-    { 
-        if (input != string.Empty && int.TryParse(input, out int result))
-        {
-           if (MinCommand <= result && result <= MaxCommand)
-           {
-               return true;
-           }
-        }
-
-        return false;
-    }
-
 }
