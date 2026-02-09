@@ -1,21 +1,28 @@
 namespace TaskManagementApp.UseCase;
 
-public class AddTaskValidationUseCase: IAddTaskValidationUseCase
+public class AddTaskValidationUseCase : IAddTaskValidationUseCase
 {
-    /// <summary>                                      
-    /// タスク追加のバリデーション                                  
-    /// </summary>                                     
-    /// <param name="name"></param>                    
-    /// <param name="date"></param>                    
-    /// <returns></returns>                            
-    public bool Validate(string name, DateOnly date)
+    /// <summary>
+    /// タスク追加のバリデーション
+    /// </summary>
+    public bool Validate(string name, string date)
     {
-        DateOnly dateOnly = DateOnly.FromDateTime(DateTime.Now);
-        if (name.Length <= 30 && date > dateOnly)
+        if (string.IsNullOrWhiteSpace(name) || name.Length > 30)
         {
-            return true;
+            return false;
+        }
+        
+        if (!DateOnly.TryParse(date, out var deadline))
+        {
+            return false;
+        }
+        
+        var today = DateOnly.FromDateTime(DateTime.Today);
+        if (deadline <= today)
+        {
+            return false;
         }
 
-        return false;
+        return true;
     }
 }

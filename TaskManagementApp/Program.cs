@@ -7,15 +7,20 @@ dbInitializer.Initialize();
 
 while (true)
 {
-    IHome home = new Home();
-    TaskView taskView = new TaskView();
+    IHomeUI homeUi = new HomeUI();
+    TaskViewUI taskViewUi = new TaskViewUI();
+    AddTaskUI addTaskUi = new AddTaskUI();
     
-    int command = home.ShowStartMessage();
+    int command = homeUi.ShowStartMessage();
     
     // コマンドによって処理を分岐
     if (command == 1)
     {
-        taskView.ShowTaskList();
+        taskViewUi.ShowTaskList();
+    }
+    else if (command == 2)
+    {
+        addTaskUi.AddTask();
     }
     else
     {

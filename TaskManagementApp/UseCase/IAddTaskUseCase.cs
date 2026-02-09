@@ -4,5 +4,5 @@ namespace TaskManagementApp.UseCase;
 
 public interface IAddTaskUseCase
 {
-    void AddTask(string name, string date);
+    void AddTask(string name, DateOnly dateOnly);
 }
