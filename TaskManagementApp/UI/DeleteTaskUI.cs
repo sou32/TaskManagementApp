@@ -22,14 +22,17 @@ public class DeleteTaskUI: IDeleteTaskUI
     
     private void DeleteTaskFromDb()
     {
-        Console.Write("削除したいタスクNoを入力してください:");
-        string delteTaskId = Console.ReadLine() ?? string.Empty;
-        if (_deleteTaskValidationUseCase.Validate(delteTaskId))
+        while (true)
         {
-            int id = int.Parse(delteTaskId);
-            _taskDeleteRepository.DeleteTask(id);
+            Console.Write("削除したいタスクNoを入力してください:");
+            string delteTaskId = Console.ReadLine() ?? string.Empty;
+            if (_deleteTaskValidationUseCase.Validate(delteTaskId))
+            {
+                int id = int.Parse(delteTaskId);
+                _taskDeleteRepository.DeleteTask(id);
+                break;
+            }
+            Console.WriteLine("数値を入力してください。");
         }
-
-        Console.WriteLine("数値を入力してください。");
     }
 }

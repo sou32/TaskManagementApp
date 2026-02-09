@@ -9,8 +9,9 @@ while (true)
 {
     IHomeUI homeUi = new HomeUI();
     TaskViewUI taskViewUi = new TaskViewUI();
-    AddTaskUI addTaskUi = new AddTaskUI();
-    DeleteTaskUI deleteTaskUi = new DeleteTaskUI();
+    IAddTaskUI addTaskUi = new AddTaskUI();
+    IDeleteTaskUI deleteTaskUi = new DeleteTaskUI();
+    IChangeTaskStatusUI changeTaskStatusUi = new ChangeTaskStatusUI();
     
     int command = homeUi.ShowStartMessage();
     
@@ -26,6 +27,10 @@ while (true)
     else if (command == 3)
     {
         deleteTaskUi.DeleteTask();
+    }
+    else if (command == 4)
+    { 
+        changeTaskStatusUi.ChangeTaskStatus();   
     }
     else
     {
