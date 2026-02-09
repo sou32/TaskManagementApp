@@ -1,20 +1,34 @@
+using TaskManagementApp.Domain.Model;
+using TaskManagementApp.UseCase;
 namespace TaskManagementApp.UI;
 
-public class TaskViewUI
+public class TaskViewUI: IViewTaskUI
 {
+    private readonly IViewTaskUseCase _viewTaskUseCase = new ViewTaskUseCase();
+
+    public void ShowTaskList()
+    {
+        ShowTaskViewMenu();
+        ViewTask();
+    }
+    
     /// <summary>
     /// タスク一覧を表示する
     /// </summary>
-    public void ShowTaskList()
+    private void ShowTaskViewMenu()
     {
         Console.WriteLine("こちらはタスク一覧です");
-        Console.WriteLine("現在着手中のタスク");
-        // 着手中のタスクを表示する
-
-        Console.WriteLine("未着手のタスク");
-        // 未着手のタスクを表示する
-
-        Console.WriteLine("確認できたら何かキーを押してください");
-        Console.ReadLine();
+    }
+    
+    private void ViewTask()
+    {
+       List<TaskModel> taskModels = _viewTaskUseCase.ViewTask();
+       taskModels.ForEach(taskModel => Console.WriteLine($"タスクID: {taskModel.Id} " +
+                                                         $"タスク名:{taskModel.Name} " +
+                                                         $"期日:{taskModel.Deadline} " +
+                                                         $"ステータス{taskModel.Status}"));
+        
+       Console.WriteLine("確認できたら何かキーを押してください");
+       Console.ReadLine();
     }
 }
