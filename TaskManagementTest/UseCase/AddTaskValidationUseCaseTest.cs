@@ -11,8 +11,7 @@ public class AddTaskValidationUseCaseTest
 
     public void Test1(string input, string dateOnly, bool expected)
     {
-        DateOnly date= DateOnly.Parse(dateOnly);
         IAddTaskValidationUseCase addTaskValidationUseCase = new AddTaskValidationUseCase();
-        Assert.Equal(expected, addTaskValidationUseCase.Validate(input, date));
+        Assert.Equal(expected, addTaskValidationUseCase.Validate(input,dateOnly));
     }
 }

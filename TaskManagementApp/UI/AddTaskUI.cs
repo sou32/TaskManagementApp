@@ -4,7 +4,7 @@ namespace TaskManagementApp.UI;
 public class AddTaskUI: IAddTaskUI
 {
     private readonly IAddTaskValidationUseCase _addTaskValidationUseCase = new AddTaskValidationUseCase();
-    IAddTaskUseCase addTaskUseCase = new AddTaskUseCase();
+    private readonly IAddTaskUseCase _addTaskUseCase = new AddTaskUseCase();
     
     /// <summary>
     /// タスク追加処理
@@ -38,10 +38,10 @@ public class AddTaskUI: IAddTaskUI
             Console.WriteLine("YYYY-MM-DDで入力");
             string deadline = Console.ReadLine()?? string.Empty;
             
-            DateOnly dateOnly = DateOnly.Parse(deadline);
-            if (_addTaskValidationUseCase.Validate(taskName, dateOnly))
+            if (_addTaskValidationUseCase.Validate(taskName, deadline))
             {
-                addTaskUseCase.AddTask(taskName, dateOnly);
+                DateOnly dateOnly = DateOnly.Parse(deadline);
+                _addTaskUseCase.AddTask(taskName, dateOnly);
                 break;
             }
             Console.WriteLine("タスク名の文字数または期日に問題があります。再度入力お願いします。");
