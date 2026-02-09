@@ -6,7 +6,7 @@ namespace TaskManagementApp.UI;
 /// </summary>
 public class Home: IHome
 {
-    private readonly IHomeValidation _homeValidation = new HomeValidation();
+    private readonly IHomeValidationUseCase _homeValidationUseCase = new HomeValidationUseCaseUseCase();
     /// <summary>
     /// タスクアプリのホーム画面の表示とコマンドの入力をする
     /// </summary>
@@ -42,7 +42,7 @@ public class Home: IHome
             Console.Write("実施したいコマンドを選択してください:");
             string input = Console.ReadLine() ?? string.Empty;
 
-            if (_homeValidation.Validation(input))
+            if (_homeValidationUseCase.Validation(input))
             {
                 return int.Parse(input);
             }

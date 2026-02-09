@@ -1,12 +1,12 @@
+using TaskManagementApp.Domain.Enum;
+
 namespace TaskManagementApp.Domain.Model;
 
 public class TaskModel
 {
-    public int Id { get; set; }
-    
     public string Name { get; set; } = string.Empty;
     
-    public DateTime Deadline { get; set; }
+    public DateOnly Deadline { get; set; }
     
-    public bool Status { get; set; }
+    public Status.TaskStatus Status { get; set; }
 }

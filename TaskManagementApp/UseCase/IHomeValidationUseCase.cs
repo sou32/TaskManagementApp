@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UseCase;
 
-public interface IHomeValidation
+public interface IHomeValidationUseCase
 {
     bool Validation(string input);
 }

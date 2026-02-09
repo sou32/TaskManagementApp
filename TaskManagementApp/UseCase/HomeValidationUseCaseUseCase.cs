@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UseCase;
 
-public class HomeValidation: IHomeValidation
+public class HomeValidationUseCaseUseCase: IHomeValidationUseCase
 {
     /// <summary>
     /// コマンドの最小値

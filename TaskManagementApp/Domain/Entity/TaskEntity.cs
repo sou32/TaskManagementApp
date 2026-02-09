@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaskManagementApp.Domain.Enum;
 
 namespace TaskManagementApp.Domain.Entity;
 
@@ -15,9 +16,9 @@ public class TaskEntity
     
     [Required]
     
-    public DateTime Deadline { get; set; }
+    public DateOnly Deadline { get; set; }
     
     [Required]
-    public bool Status { get; set; }
+    public Status.TaskStatus Status { get; set; }
     
 }

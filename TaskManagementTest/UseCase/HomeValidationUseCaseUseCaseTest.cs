@@ -1,7 +1,7 @@
 ﻿using TaskManagementApp.UseCase;
-namespace TaskManagementTest;
+namespace TaskManagementTest.UseCase;
 
-public class HomeValidationTest
+public class HomeValidationUseCaseUseCaseTest
 {
     [Theory]
     [InlineData("0", false)]
@@ -13,7 +13,7 @@ public class HomeValidationTest
     [InlineData("", false)]
     public void Test1(string input, bool expected)
     {
-        IHomeValidation homeValidation = new HomeValidation();
-        Assert.Equal(expected, homeValidation.Validation(input));
+        IHomeValidationUseCase homeValidationUseCase = new HomeValidationUseCaseUseCase();
+        Assert.Equal(expected, homeValidationUseCase.Validation(input));
     }
 }
