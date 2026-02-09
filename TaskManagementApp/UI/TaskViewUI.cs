@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UI;
 
-public class TaskView
+public class TaskViewUI
 {
     /// <summary>
     /// タスク一覧を表示する

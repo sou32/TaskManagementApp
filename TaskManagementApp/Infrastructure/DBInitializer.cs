@@ -17,8 +17,8 @@ public class DBInitializer: IDBInitializer
             """
             CREATE TABLE IF NOT EXISTS Tasks (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                Title TEXT NOT NULL,
-                DueDate TEXT,
+                Name TEXT NOT NULL,
+                Deadline TEXT,
                 Status TEXT NOT NULL
             );
             """;

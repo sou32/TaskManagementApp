@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UI;
 
-public interface IHome
+public interface IHomeUI
 {
     int ShowStartMessage();
 }
