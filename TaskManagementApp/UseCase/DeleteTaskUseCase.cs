@@ -8,5 +8,4 @@ public class DeleteTaskUseCase
     {
         _taskDeleteRepository.DeleteTask(id);
     }
-    
 }
