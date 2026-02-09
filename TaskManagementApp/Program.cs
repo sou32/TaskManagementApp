@@ -10,6 +10,7 @@ while (true)
     IHomeUI homeUi = new HomeUI();
     TaskViewUI taskViewUi = new TaskViewUI();
     AddTaskUI addTaskUi = new AddTaskUI();
+    DeleteTaskUI deleteTaskUi = new DeleteTaskUI();
     
     int command = homeUi.ShowStartMessage();
     
@@ -21,6 +22,10 @@ while (true)
     else if (command == 2)
     {
         addTaskUi.AddTask();
+    }
+    else if (command == 3)
+    {
+        deleteTaskUi.DeleteTask();
     }
     else
     {
