@@ -2,7 +2,7 @@ using TaskManagementApp.Infrastructure.Record;
 
 namespace TaskManagementApp.Infrastructure;
 
-public class DbInitializer : IDBInitializer
+public class DbInitializer : IDbInitializer
 {
     public void Initialize()
     {

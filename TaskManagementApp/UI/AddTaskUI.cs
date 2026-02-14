@@ -1,7 +1,7 @@
 using TaskManagementApp.UseCase;
 namespace TaskManagementApp.UI;
 
-public class AddTaskUI: IAddTaskUI
+public sealed class AddTaskUI: IAddTaskUI
 {
     private readonly IAddTaskValidationUseCase _addTaskValidationUseCase = new AddTaskValidationUseCase();
     private readonly IAddTaskUseCase _addTaskUseCase = new AddTaskUseCase();

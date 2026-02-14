@@ -2,7 +2,7 @@ using TaskManagementApp.UseCase;
 
 namespace TaskManagementApp.UI;
 
-public class ChangeTaskStatusUI: IChangeTaskStatusUI
+public sealed class ChangeTaskStatusUI: IChangeTaskStatusUI
 {
     private readonly IChangeTaskStatusUseCase _changeTaskStatusUseCase = new ChangeTaskStatusUseCase();
     private readonly IChangeTaskStatusValidation _changeTaskStatusValidation = new ChangeTaskStatusValidation();

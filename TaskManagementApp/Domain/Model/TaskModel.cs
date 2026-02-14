@@ -2,7 +2,7 @@ using TaskManagementApp.Domain.Enum;
 
 namespace TaskManagementApp.Domain.Model;
 
-public class TaskModel
+public sealed class TaskModel
 {
     public int Id { get; set; }
     

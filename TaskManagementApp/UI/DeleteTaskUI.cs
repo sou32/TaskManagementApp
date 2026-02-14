@@ -1,11 +1,10 @@
-using TaskManagementApp.Infrastructure.Repository;
 using TaskManagementApp.UseCase;
 
 namespace TaskManagementApp.UI;
 
-public class DeleteTaskUI: IDeleteTaskUI
+public sealed class DeleteTaskUI: IDeleteTaskUI
 {
-    private readonly ITaskDeleteRepository _taskDeleteRepository = new TaskDeleteRepository();
+    private readonly IDeleteTaskUseCase _deleteTaskUseCase = new DeleteTaskUseCase();
     private readonly IDeleteTaskValidationUseCase _deleteTaskValidationUseCase = new DeleteTaskValidationUseCase();
     
     public void DeleteTask()
@@ -29,7 +28,7 @@ public class DeleteTaskUI: IDeleteTaskUI
             if (_deleteTaskValidationUseCase.Validate(delteTaskId))
             {
                 int id = int.Parse(delteTaskId);
-                _taskDeleteRepository.DeleteTask(id);
+                _deleteTaskUseCase.DeleteTask(id);
                 break;
             }
             Console.WriteLine("数値を入力してください。");

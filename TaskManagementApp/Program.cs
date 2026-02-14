@@ -2,7 +2,7 @@
 using TaskManagementApp.Infrastructure;
 
 // DB作成＆接続
-IDBInitializer dbInitializer = new DbInitializer();
+IDbInitializer dbInitializer = new DbInitializer();
 dbInitializer.Initialize();
 
 while (true)

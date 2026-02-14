@@ -2,7 +2,7 @@ using TaskManagementApp.Domain.Entity;
 using TaskManagementApp.Infrastructure.Record;
 namespace TaskManagementApp.Infrastructure.Repository;
 
-public class TaskViewRepository: ITaskViewRepository
+public sealed class TaskViewRepository: ITaskViewRepository
 {
     public List<TaskEntity> ViewTask()
     {

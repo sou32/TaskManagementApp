@@ -4,7 +4,7 @@ using TaskManagementApp.Infrastructure.Repository;
 using TaskManagementApp.Domain.Model;
 namespace TaskManagementApp.UseCase;
 
-public class AddTaskUseCase: IAddTaskUseCase
+public sealed class AddTaskUseCase: IAddTaskUseCase
 {
     /// <summary>
     /// タスクを追加する

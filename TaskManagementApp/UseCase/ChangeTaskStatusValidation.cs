@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UseCase;
 
-public class ChangeTaskStatusValidation: IChangeTaskStatusValidation
+public sealed class ChangeTaskStatusValidation: IChangeTaskStatusValidation
 {
     public bool Validate(string completedId, string inProgressId)
     {

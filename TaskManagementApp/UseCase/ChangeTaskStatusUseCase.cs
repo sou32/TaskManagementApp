@@ -1,7 +1,7 @@
 using TaskManagementApp.Infrastructure.Repository;
 namespace TaskManagementApp.UseCase;
 
-public class ChangeTaskStatusUseCase: IChangeTaskStatusUseCase
+public sealed class ChangeTaskStatusUseCase: IChangeTaskStatusUseCase
 {
     ITaskChangeStatusRepository _taskChangeStatusRepository = new TaskChangeStatusRepository();
     

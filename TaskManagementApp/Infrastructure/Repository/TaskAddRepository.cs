@@ -3,7 +3,7 @@ using TaskManagementApp.Infrastructure.Record;
 
 namespace TaskManagementApp.Infrastructure.Repository;
 
-public class TaskAddRepository: ITaskAddRepository
+public sealed class TaskAddRepository: ITaskAddRepository
 {
     /// <summary>
     /// タスク追加

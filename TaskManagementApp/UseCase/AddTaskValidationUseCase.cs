@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UseCase;
 
-public class AddTaskValidationUseCase : IAddTaskValidationUseCase
+public sealed class AddTaskValidationUseCase : IAddTaskValidationUseCase
 {
     /// <summary>
     /// タスク追加のバリデーション
