@@ -3,7 +3,7 @@ using TaskManagementApp.Infrastructure.Record;
 
 namespace TaskManagementApp.Infrastructure.Repository;
 
-public class TaskDeleteRepository: ITaskDeleteRepository
+public sealed class TaskDeleteRepository: ITaskDeleteRepository
 {
     public void DeleteTask(int id)
     {

@@ -5,7 +5,7 @@ using TaskManagementApp.Domain.Enum;
 namespace TaskManagementApp.Domain.Entity;
 
 [Table("Tasks")]
-public class TaskEntity
+public sealed class TaskEntity
 {
     [Key]
     public int Id { get; set; }

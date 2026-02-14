@@ -5,7 +5,7 @@ using TaskManagementApp.Infrastructure.Record;
 
 namespace TaskManagementApp.Infrastructure.Repository;
 
-public class TaskChangeStatusRepository: ITaskChangeStatusRepository
+public sealed class TaskChangeStatusRepository: ITaskChangeStatusRepository
 {
     public void ChangeStatus(int completedId, int inProgressId)
     {

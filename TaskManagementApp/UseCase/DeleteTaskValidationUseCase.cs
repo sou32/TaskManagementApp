@@ -1,6 +1,6 @@
 namespace TaskManagementApp.UseCase;
 
-public class DeleteTaskValidationUseCase:IDeleteTaskValidationUseCase
+public sealed class DeleteTaskValidationUseCase:IDeleteTaskValidationUseCase
 {
     public bool Validate(string id)
     {

@@ -4,7 +4,7 @@ namespace TaskManagementApp.UI;
 /// <summary>
 /// ホーム画面のUI
 /// </summary>
-public class HomeUI: IHomeUI
+public sealed class HomeUI: IHomeUI
 {
     private readonly IHomeValidationUseCase _homeValidationUseCase = new HomeValidationUseCaseUseCase();
     /// <summary>
